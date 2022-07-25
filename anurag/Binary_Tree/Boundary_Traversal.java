@@ -35,5 +35,13 @@ public class Boundary_Traversal {
         if(root.left != null) addLeaves(root.left, ans);
         if(root.right != null) addLeaves(root.right, ans);
     }
+    public ArrayList < Integer > printBoundary(TreeNode node) {
+        ArrayList < Integer > ans = new ArrayList < Integer > ();
+        if (!isLeaf(node)) ans.add(node.val);
+        addLeftBoundary(node, ans);
+        addLeaves(node, ans);
+        addRightBoundary(node, ans);
+        return ans;
+    }
     //The time complexity will be O(H) + O(H) + O(N) which is ≈ O(N)
 }
