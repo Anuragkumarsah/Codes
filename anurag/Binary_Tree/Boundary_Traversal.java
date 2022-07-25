@@ -36,7 +36,7 @@ public class Boundary_Traversal {
         if(root.right != null) addLeaves(root.right, ans);
     }
     public ArrayList < Integer > printBoundary(TreeNode node) {
-        ArrayList < Integer > ans = new ArrayList < Integer > ();
+        ArrayList < Integer > ans = new ArrayList <> ();
         if (!isLeaf(node)) ans.add(node.val);
         addLeftBoundary(node, ans);
         addLeaves(node, ans);
@@ -44,4 +44,5 @@ public class Boundary_Traversal {
         return ans;
     }
     //The time complexity will be O(H) + O(H) + O(N) which is ≈ O(N)
+    // The space complexity will be O(N) as we are using a stack for Right Boundary
 }
