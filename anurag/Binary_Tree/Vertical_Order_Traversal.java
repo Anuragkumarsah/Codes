@@ -75,7 +75,7 @@ public class Vertical_Order_Traversal {
                 System.out.println();
             }
             // The Time Complexity will be O(Nlog(N)) solution, where N is the number of nodes
-            // The Space Complexity will be O(N) + O(N) as we are using a stack for Right Boundary
+            // The Space Complexity will be O(N) + O(N)
         }
 }
 

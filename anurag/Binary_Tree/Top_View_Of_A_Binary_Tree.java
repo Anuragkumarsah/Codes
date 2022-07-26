@@ -38,5 +38,8 @@ public class Top_View_Of_A_Binary_Tree {
             ans.add(entry.getValue());
         }
         return ans;
+
+        // The Time Complexity will be O(N) solution, where N is the number of nodes
+        // The Space Complexity will be O(N)
     }
 }
