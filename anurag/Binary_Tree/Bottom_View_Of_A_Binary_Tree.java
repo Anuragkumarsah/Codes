@@ -30,18 +30,14 @@ public class Bottom_View_Of_A_Binary_Tree {
         Queue<Pair3> q = new LinkedList<>();
         q.offer(new Pair3(0, root));
         while(!q.isEmpty()){
-            int level = q.size();
-            for(int i=0;i<level;i++){
                 Pair3 pair = q.poll();
                 assert pair!=null;
                 // checking whether we have covered a line (vertical) or not, if not covered we add it to the map otherwise we replace it with the new value
                 if(ans.containsKey(pair.line)) ans.replace(pair.line, pair.node.val);
                 else ans.put(pair.line, pair.node.val);
-
                 //Level Order Traversal
                 if(pair.node.left != null) q.offer(new Pair3(pair.line-1, pair.node.left));
                 if(pair.node.right != null) q.offer(new Pair3(pair.line+1, pair.node.right));
-            }
         }
         return ans;
     }

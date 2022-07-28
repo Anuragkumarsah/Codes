@@ -29,8 +29,6 @@ public class Top_view_of_Binary_Tree {
         Queue<Pair2> q = new LinkedList<>();
         q.offer(new Pair2(0, root));
         while(!q.isEmpty()){
-            int level = q.size();
-            for(int i=0;i<level;i++){
                 Pair2 pair = q.poll();
                 assert pair!=null;
                 // checking whether we have covered a line (vertical) or not, if not covered we add it to the map
@@ -39,7 +37,6 @@ public class Top_view_of_Binary_Tree {
                 //Level Order Traversal
                 if(pair.node.left != null) q.offer(new Pair2(pair.line-1, pair.node.left));
                 if(pair.node.right != null) q.offer(new Pair2(pair.line+1, pair.node.right));
-            }
         }
         return ans;
     }
