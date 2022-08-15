@@ -26,7 +26,7 @@ public class Combination_Sum {
     }
 
     public static void main(String[] args) {
-        int[] arr = {2, 3, 5};
-        System.out.println(combinationSum(arr, 8    ));
+        int[] arr = {2, 3, 1};
+        System.out.println(combinationSum(arr, 4));
     }
 }
