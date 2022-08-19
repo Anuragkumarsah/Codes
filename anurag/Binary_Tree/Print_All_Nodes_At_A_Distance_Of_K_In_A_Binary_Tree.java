@@ -36,11 +36,11 @@ public class Print_All_Nodes_At_A_Distance_Of_K_In_A_Binary_Tree {
 
     // This function maps the nodes with their parent, like what is parent of the subtree root.
     public static void mark_parents(TreeNode root, Map<TreeNode, TreeNode> parent_map){
-        if(root == null || root.left == null || root.right == null) return;
+        if(root == null) return;
         // marking the left subtree root to it's parents
-        parent_map.put(root.left, root);
+        if(root.left!=null) parent_map.put(root.left, root);
         // marking the right subtree root to it's parents
-        parent_map.put(root.right, root);
+        if(root.right!=null) parent_map.put(root.right, root);
         mark_parents(root.left, parent_map);
         mark_parents(root.right, parent_map);
     }
@@ -74,7 +74,7 @@ public class Print_All_Nodes_At_A_Distance_Of_K_In_A_Binary_Tree {
         root.right.right = new TreeNode(8);
         Map<TreeNode, TreeNode> parent_map = new HashMap<>();
         mark_parents(root, parent_map);
-        TreeNode target_node = mark_node(root,null,  3);
+        TreeNode target_node = mark_node(root,null,  4);
         ArrayList<Integer> ans = new ArrayList<>();
         HashSet<TreeNode> visited = new HashSet<>();
         find_Nodes(target_node, 0, 2, parent_map, visited, ans);
