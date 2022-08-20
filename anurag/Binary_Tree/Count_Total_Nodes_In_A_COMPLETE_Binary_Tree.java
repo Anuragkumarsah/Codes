@@ -13,7 +13,7 @@ public class Count_Total_Nodes_In_A_COMPLETE_Binary_Tree {
         int left_height = calculate_height(root.left, 0, false);
         int right_height = calculate_height(root.right, 0, true);
         if(right_height == left_height){
-            return (int)(Math.pow(2, left_height+1))-1;
+            return (2<<left_height)-1;
         }else{
             return 1+count_nodes(root.left)+count_nodes(root.right);
         }
