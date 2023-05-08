@@ -1,13 +1,13 @@
 package com.anurag.GFG_Problems;
 
-class Node{
-    int data;
-    Node next;
-    public Node(int data, Node next){
-        this.data = data;
-        this.next = next;
-    }
-}
+//class Node{
+//    int data;
+//    Node next;
+//    public Node(int data, Node next){
+//        this.data = data;
+//        this.next = next;
+//    }
+//}
 
 public class Find_The_First_Node_Of_Loop_In_Linked_List {
     public static int findFirstNode(Node head){

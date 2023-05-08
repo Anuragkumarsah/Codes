@@ -24,14 +24,13 @@ public class Subset_Sum_Problem {
             return true;
         }
         if(idx == 0) return arr[idx] == sum;
-        System.out.println(Arrays.deepToString(dp));
         if(dp[idx][sum] != -1){
 
             return dp[idx][sum] != 0;
         }
+        System.out.println(Arrays.deepToString(dp));
         boolean take = false;
         if(sum >= arr[idx]){
-            System.out.println(Arrays.deepToString(dp));
             take = isSubsetSum_memoization(idx-1, arr, sum-arr[idx], dp);
         }
         boolean notTake = isSubsetSum_memoization(idx-1, arr, sum, dp);

@@ -17,7 +17,10 @@ public class Jump_Game_II {
     public static int jump_memoization(int[] nums, int index, int length, int[] dp) {
         if(index > length) return Integer.MAX_VALUE;
         if(index == length) return 0;
-        if(dp[index] != -1) return dp[index];
+        if(dp[index] != -1){
+            System.out.println(Arrays.toString(dp));
+            return dp[index];
+        }
         if(nums[index] == 0) return Integer.MAX_VALUE;
         int min_steps = 100_000_000;
         for(int i=1;i<=nums[index];i++){
@@ -40,7 +43,8 @@ public class Jump_Game_II {
         int length = nums.length - 1;
         int[] dp = new int[length + 1];
         Arrays.fill(dp, -1);
-        System.out.println(jump_recursion(nums, 0, length));
-        System.out.println(jump_memoization(nums, 0, length, dp));
+//        System.out.println(jump_recursion(nums, 0, length));
+        jump_memoization(nums, 0, length, dp);
+
     }
 }
